@@ -9,7 +9,6 @@ function Bars({
   scaleY,
   onMouseEnter,
   onMouseLeave,
-  selectedSegment,
   highlightedAccounts,
 }: BarsProps) {
   return (
@@ -26,9 +25,9 @@ function Bars({
             data-testid="Bars"
             key={`bar-${id}`}
             x={scaleX(card_type)}
-            y={scaleY(balance)}
+            y={Math.max(0, scaleY(balance))}
             width={scaleX.bandwidth()}
-            height={height - scaleY(balance)}
+            height={Math.max(0, height - scaleY(balance))}
             fill={colorMapping(card_type)}
             onMouseEnter={(event) => onMouseEnter(event, balance, card_type)}
             onMouseLeave={onMouseLeave}
