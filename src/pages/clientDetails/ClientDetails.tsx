@@ -60,7 +60,7 @@ export default function ClientDetails(props: any) {
             <CardContent>
               <Grid container spacing={3}>
                 <Grid item xs={4}>
-                  <Typography variant="h6" gutterBottom>
+                  <Typography variant="subtitle1" gutterBottom>
                     Client ID : {client.id}
                   </Typography>
 
