@@ -10,17 +10,27 @@ import FormControl from "@mui/material/FormControl";
 import { useApiContext } from "../../contexts/apicontext";
 import { CONSTANTS } from "../../utils/constants";
 import ClearIcon from "@mui/icons-material/Clear";
+import { IClientDetails, IClientNames } from "../../interfaces/types";
 
 function SearchDropDown() {
   const { apiState, apiDispatch } = useApiContext();
   const [selectedClientName, setSelectedClientName] = useState("");
   const clientsAPIId = CONSTANTS.API.CLIENTS.ID;
-  let clientNames: any;
+
+  let clientNames: IClientNames[] = [];
   if (apiState[clientsAPIId] && apiState[clientsAPIId].data) {
-    clientNames = apiState[clientsAPIId].data.map((client: any) => ({
+    clientNames = apiState[clientsAPIId].data.map((client: IClientDetails) => ({
       id: client.id,
       name: client.firstname !== null ? client.firstname : client.name,
     }));
+    const uniqueNames = new Set<string>();
+    clientNames = clientNames.filter((client) => {
+      if (!uniqueNames.has(client.name)) {
+        uniqueNames.add(client.name);
+        return true;
+      }
+      return false;
+    });
   }
 
   const handleChange = (e: any) => {
@@ -48,7 +58,7 @@ function SearchDropDown() {
 
   const getClientId = (selectedName: string) => {
     const selectedClient = clientNames.find(
-      (client: any) => client.name === selectedName
+      (client: IClientNames) => client.name === selectedName
     );
     return selectedClient ? selectedClient.id : null;
   };
@@ -80,7 +90,7 @@ function SearchDropDown() {
           }
         >
           {clientNames &&
-            clientNames.map((client: any) => (
+            clientNames.map((client: IClientNames) => (
               <MenuItem key={client.id} value={client.name}>
                 {client.name}
               </MenuItem>

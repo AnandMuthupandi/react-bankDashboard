@@ -18,7 +18,7 @@ export default function Charts({ clientId, openModal }: ChartProps) {
   const { apiState, fetchData, apiDispatch } = useApiContext();
   const [clientAccounts, setClientAccounts] = useState<IClientAccounts[]>([]);
   const [cardTypes, setCardTypes] = useState<IClientAccounts[]>([]);
-  const [selectedSegment, setSelectedSegment] = useState(null);
+  const [selectedSegment, setSelectedSegment] = useState("");
   const [isShowLoading, setIsShowLoading] = useState(false);
   const accountsId = CONSTANTS.API.ACCOUNTS.ID;
   const clientAccountsAPIId = CONSTANTS.API.CLIENT_ACCOUNTS.ID;
@@ -55,7 +55,7 @@ export default function Charts({ clientId, openModal }: ChartProps) {
     }
   }, [clientId]);
 
-  const handlePieSegmentClick = (segment: any) => {
+  const handlePieSegmentClick = (segment: string) => {
     setSelectedSegment(segment);
   };
 

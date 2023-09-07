@@ -17,6 +17,11 @@ export interface IClient {
   value: string;
 }
 
+export interface IClientNames {
+  id: string;
+  name: string;
+}
+
 export interface IClientAccounts {
   balance: number;
   card_type: string;
@@ -38,7 +43,7 @@ export interface IClientDetails {
 export interface BarChartProps {
   clientAccounts: IClientAccounts[];
   cardTypes: IClientAccounts[];
-  selectedSegment: any;
+  selectedSegment: string;
 }
 export interface ITooltip {
   x: number;
@@ -67,7 +72,7 @@ export interface BarsProps {
     cardType: string
   ) => void;
   onMouseLeave: () => void;
-  selectedSegment: any;
+  selectedSegment: string;
   highlightedAccounts: any;
 }
 
