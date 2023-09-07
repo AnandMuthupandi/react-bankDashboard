@@ -29,7 +29,7 @@ const Home: React.FC = () => {
   if (apiState[clientsAPIId]) {
     let { data, error } = APIUtility.parseResponse(apiState[clientsAPIId]);
     if (data) {
-      return <ClientDetails />;
+      return <ClientDetails clientData={data} />;
     } else if (error) {
       return error.message;
     }
