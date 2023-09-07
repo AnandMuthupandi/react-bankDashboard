@@ -2,8 +2,6 @@
 
 A web application for checking registered clients and their banking accounts. This project displays clients and their accounts as a scrollable page with various filtering options. The data is fetched from a RESTful API.
 
-<!-- ![Screenshot](screenshot.png) -->
-
 ## Features
 
 - View a list of clients and their accounts.
@@ -16,9 +14,11 @@ A web application for checking registered clients and their banking accounts. Th
 ## Technologies Used
 
 - React, TypeScript
+- Jest, React Testing Library (for Unit Tests)
 - Fetch (for API requests)
-- D3 (for pie chart)
+- D3 (for bar/pie chart)
 - React Router (for routing)
+- Material UI (for component Library)
 - CSS (for styling)
 
 ## Installation
