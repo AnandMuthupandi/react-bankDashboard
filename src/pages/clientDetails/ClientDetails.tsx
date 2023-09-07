@@ -10,6 +10,7 @@ import Typography from "@mui/material/Typography";
 import { useApiContext } from "../../contexts/apicontext";
 import { clientDetailsMapping } from "./ClientDetailsMapping";
 import Charts from "../../components/common/Charts";
+import AccountsTable from "../accountsTable/AccountsTable";
 import { IClient, IClientDetails } from "../../interfaces/types";
 
 const style = {
@@ -87,6 +88,11 @@ export default function ClientDetails(props: any) {
           <br></br>
         </React.Fragment>
       ))}
+      <Modal open={isModalOpen} onClose={closeModal}>
+        <Box sx={style}>
+          {selectedClient && <AccountsTable selectedClient={selectedClient} />}
+        </Box>
+      </Modal>
     </>
   );
 }
