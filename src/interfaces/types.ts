@@ -12,6 +12,11 @@ export interface IGroupedData {
   values: number[];
 }
 
+export interface IClient {
+  label: string;
+  value: string;
+}
+
 export interface IClientAccounts {
   balance: number;
   card_type: string;

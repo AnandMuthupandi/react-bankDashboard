@@ -45,7 +45,23 @@ describe("ClientDetails Component", () => {
 
     expect(screen.getByText("Client ID : 1")).toBeInTheDocument();
     expect(screen.getByText("Client ID : 1")).toBeInTheDocument();
-    
+    expect(screen.getByText("Mocked Charts")).toBeInTheDocument();
   });
 
+  it('opens modal when "More" button is clicked', () => {
+    const clientData = [
+      {
+        id: "1",
+        name: "OReilly",
+        firstname: "Brian",
+      },
+    ];
+
+    render(<ClientDetails clientData={clientData} />);
+
+    fireEvent.click(screen.getByText("More"));
+
+    const accountsTable = screen.getByTestId("mock-accounts-table");
+    expect(accountsTable).toBeInTheDocument();
+  });
 });
