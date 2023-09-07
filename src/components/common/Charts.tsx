@@ -8,6 +8,7 @@ import { APIUtility } from "../../utils/apiutilities";
 import { ChartProps, IClientAccounts } from "../../interfaces/types";
 import EmptyAccounts from "./EmptyAccounts";
 import LoadingWrapper from "./loading/LoadingWrapper";
+import FilterCardType from "../filterCardType/FilterCardType";
 import {
   preprocessAccountsData,
   preprocessClientAccountsData,
@@ -85,6 +86,10 @@ export default function Charts({ clientId, openModal }: ChartProps) {
                 )}
               </Grid>
               <Grid item xs={4}>
+                <FilterCardType
+                  clientAccounts={cardTypes}
+                  filteredCards={filteredCardTypes}
+                />
                 <div onClick={handleModal}>
                   <BarChart
                     clientAccounts={clientAccounts}
