@@ -76,9 +76,9 @@ export default function Charts({ clientId, openModal }: ChartProps) {
           component={
             <>
               <Grid item xs={4}>
-                {clientAccounts.length ? (
+                {cardTypes.length ? (
                   <PieChart
-                    clientAccounts={clientAccounts}
+                    clientAccounts={cardTypes}
                     onSegmentClick={handlePieSegmentClick}
                   />
                 ) : (
