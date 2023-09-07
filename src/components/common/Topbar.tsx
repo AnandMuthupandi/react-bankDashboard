@@ -1,7 +1,7 @@
-import React from "react";
 import { AppBar, Toolbar } from "@mui/material";
 import colorConfigs from "../../configs/colorConfigs";
 import sizeConfigs from "../../configs/sizeConfigs";
+import SearchDropDown from "../searchDropDown/SearchDropDown";
 import { useLocation } from "react-router-dom";
 
 const Topbar = () => {
@@ -19,7 +19,7 @@ const Topbar = () => {
         color: colorConfigs.topbar.color,
       }}
     >
-      <Toolbar></Toolbar>
+      <Toolbar>{location.pathname === "/" && <SearchDropDown />}</Toolbar>
     </AppBar>
   );
 };
