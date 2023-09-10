@@ -1,4 +1,5 @@
 import { IClientDetails } from "../../interfaces/types";
+import { parseDate } from "../../utils/utilities";
 
 export const clientDetailsMapping = (client: IClientDetails) => {
   return [
@@ -12,7 +13,7 @@ export const clientDetailsMapping = (client: IClientDetails) => {
     },
     {
       label: "Date of Birth",
-      value: client.birthday,
+      value: parseDate(client.birthday),
     },
     {
       label: "Address",

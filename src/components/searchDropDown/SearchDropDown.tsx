@@ -65,38 +65,42 @@ function SearchDropDown() {
 
   return (
     <>
-      <FormControl fullWidth>
-        <InputLabel id="client-select-label">Client First Name</InputLabel>
-        <Select
-          sx={{
-            width: 250,
-            height: 50,
-          }}
-          label="Client First Name"
-          labelId="client-select-label"
-          value={selectedClientName}
-          onChange={handleChange}
-          inputProps={{
-            IconComponent: () => null,
-          }}
-          endAdornment={
-            selectedClientName && (
-              <InputAdornment position="end">
-                <IconButton onClick={handleReset}>
-                  <ClearIcon />
-                </IconButton>
-              </InputAdornment>
-            )
-          }
-        >
-          {clientNames &&
-            clientNames.map((client: IClientNames) => (
-              <MenuItem key={client.id} value={client.name}>
-                {client.name}
-              </MenuItem>
-            ))}
-        </Select>
-      </FormControl>
+      {clientNames.length ? (
+        <FormControl fullWidth>
+          <InputLabel id="client-select-label">Client First Name</InputLabel>
+          <Select
+            sx={{
+              width: 250,
+              height: 50,
+            }}
+            label="Client First Name"
+            labelId="client-select-label"
+            value={selectedClientName}
+            onChange={handleChange}
+            inputProps={{
+              IconComponent: () => null,
+            }}
+            endAdornment={
+              selectedClientName && (
+                <InputAdornment position="end">
+                  <IconButton onClick={handleReset}>
+                    <ClearIcon />
+                  </IconButton>
+                </InputAdornment>
+              )
+            }
+          >
+            {clientNames &&
+              clientNames.map((client: IClientNames) => (
+                <MenuItem key={client.id} value={client.name}>
+                  {client.name}
+                </MenuItem>
+              ))}
+          </Select>
+        </FormControl>
+      ) : (
+        <></>
+      )}
     </>
   );
 }

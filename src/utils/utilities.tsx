@@ -1,3 +1,5 @@
+import moment from "moment";
+
 export const Utility = {
   isEmpty: (value: any) => {
     const checkLength = (data: any) => data.length === 0;
@@ -27,4 +29,20 @@ export const colorMapping = (cardType: string) => {
     default:
       return "red";
   }
+};
+
+export const parseDate = (date: string) => {
+  if (isValidDateFormat(date)) {
+    const inputDateFormat = "YYYY-MM-DD HH:mm:ssZ";
+    const parsedDate = moment(date, inputDateFormat);
+    return parsedDate.format("DD-MMM-YYYY");
+  } else {
+    return date;
+  }
+};
+
+export const isValidDateFormat = (date: string) => {
+  const dateFormatRegex =
+    /^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}\+\d{2}:\d{2})|(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})$/;
+  return dateFormatRegex.test(date);
 };

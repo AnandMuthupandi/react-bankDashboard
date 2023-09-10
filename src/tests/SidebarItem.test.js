@@ -47,7 +47,7 @@ describe("SidebarItem", () => {
     render(
       <Provider store={store}>
         <MemoryRouter>
-          <SidebarItem item={item} />
+          <SidebarItem item={item} selected={true}/>
         </MemoryRouter>
       </Provider>
     );

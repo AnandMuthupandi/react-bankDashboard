@@ -51,7 +51,7 @@ describe('AccountsTable Component', () => {
     expect(screen.getByText('aadasdf')).toBeInTheDocument();
     expect(screen.getByText('VISA')).toBeInTheDocument();
     expect(screen.getByText('100')).toBeInTheDocument(); 
-    expect(screen.getByText('2021-04-24 12:39:31+00:00')).toBeInTheDocument();
+    expect(screen.getByText('24-Apr-2021')).toBeInTheDocument();
   });
 
   it('renders EmptyAccounts component when there are no accounts', () => {
