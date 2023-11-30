@@ -1,8 +1,16 @@
-import { Avatar, Box, Card, CardContent, Container, Grid } from "@mui/material";
+import { Box, Container, Grid } from "@mui/material";
 import React from "react";
 import styles from "../../styles/styles.module.css";
 import Features from "../../components/features/Features";
 import assets from "../../assets";
+
+const stackImages = [
+  { src: assets.images.react, alt: "react" },
+  { src: assets.images.typeScript, alt: "ts" },
+  { src: assets.images.d3js, alt: "d3" },
+  { src: assets.images.jest, alt: "jest" },
+  { src: assets.images.mui, alt: "mui" },
+];
 
 function HomePage() {
   return (
@@ -21,29 +29,11 @@ function HomePage() {
 
       <Box style={{ textAlign: "end" }}>
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
-          <Grid item xs={2}>
-            <img
-              src={assets.images.react}
-              className={styles.stack}
-              alt="react"
-            />
-          </Grid>
-          <Grid item xs={2}>
-            <img
-              src={assets.images.typeScript}
-              className={styles.stack}
-              alt="ts"
-            />
-          </Grid>
-          <Grid item xs={2}>
-            <img src={assets.images.d3js} className={styles.stack} alt="d3" />
-          </Grid>
-          <Grid item xs={2}>
-            <img src={assets.images.jest} className={styles.stack} alt="jest" />
-          </Grid>
-          <Grid item xs={2}>
-            <img src={assets.images.mui} className={styles.stack} alt="mui" />
-          </Grid>
+          {stackImages.map((stack, index) => (
+            <Grid item key={index} xs={2}>
+              <img src={stack.src} className={styles.stack} alt={stack.alt} />
+            </Grid>
+          ))}
         </Grid>
       </Box>
     </Container>
