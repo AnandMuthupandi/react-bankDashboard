@@ -19,7 +19,9 @@ const Topbar = () => {
         color: colorConfigs.topbar.color,
       }}
     >
-      <Toolbar>{location.pathname === "/" && <SearchDropDown />}</Toolbar>
+      <Toolbar>
+        {location.pathname === "/dashboard" && <SearchDropDown />}
+      </Toolbar>
     </AppBar>
   );
 };

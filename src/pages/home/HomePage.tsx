@@ -1,39 +1,53 @@
-import React, { useEffect } from "react";
-import { useApiContext } from "../../contexts/apicontext";
-import { APIUtility } from "../../utils/apiutilities";
-import { CONSTANTS } from "../../utils/constants";
-import ClientDetails from "../clientDetails/ClientDetails";
+import { Avatar, Box, Card, CardContent, Container, Grid } from "@mui/material";
+import React from "react";
+import styles from "../../styles/styles.module.css";
+import Features from "../../components/features/Features";
+import assets from "../../assets";
 
-const Home: React.FC = () => {
-  const { apiState, fetchData } = useApiContext();
-  const clientsAPIId = CONSTANTS.API.CLIENTS.ID;
-  const accountsId = CONSTANTS.API.ACCOUNTS.ID;
-  useEffect(() => {
-    if (!apiState[clientsAPIId]) {
-      fetchData({
-        url: APIUtility.generateApiUrl(CONSTANTS.API.CLIENTS.URL),
-        apiId: clientsAPIId,
-        options: APIUtility.apiGetOptions,
+function HomePage() {
+  return (
+    <Container>
+      <header className={styles.homeHeader}>
+        <h1>Thank you for visiting my site</h1>
+      </header>
+      <h2>
+        A web application for checking registered clients and their banking
+        accounts. This project displays clients and their accounts as a
+        scrollable page with various filtering options. The data is fetched from
+        a RESTful API.
+      </h2>
 
-        isToStoreInContext: true,
-      });
-      fetchData({
-        url: APIUtility.generateApiUrl(CONSTANTS.API.ACCOUNTS.URL),
-        apiId: accountsId,
-        options: APIUtility.apiGetOptions,
-        isToStoreInContext: true,
-      });
-    }
-  }, []);
+      <Features />
 
-  if (apiState[clientsAPIId]) {
-    let { data, error } = APIUtility.parseResponse(apiState[clientsAPIId]);
-    if (data) {
-      return <ClientDetails clientData={data} />;
-    } else if (error) {
-      return error.message;
-    }
-  }
-};
+      <Box style={{ textAlign: "end" }}>
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
+          <Grid item xs={2}>
+            <img
+              src={assets.images.react}
+              className={styles.stack}
+              alt="react"
+            />
+          </Grid>
+          <Grid item xs={2}>
+            <img
+              src={assets.images.typeScript}
+              className={styles.stack}
+              alt="ts"
+            />
+          </Grid>
+          <Grid item xs={2}>
+            <img src={assets.images.d3js} className={styles.stack} alt="d3" />
+          </Grid>
+          <Grid item xs={2}>
+            <img src={assets.images.jest} className={styles.stack} alt="jest" />
+          </Grid>
+          <Grid item xs={2}>
+            <img src={assets.images.mui} className={styles.stack} alt="mui" />
+          </Grid>
+        </Grid>
+      </Box>
+    </Container>
+  );
+}
 
-export default Home;
+export default HomePage;
