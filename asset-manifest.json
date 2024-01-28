@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/sample-bankDashboard/static/css/main.69951cb9.css",
-    "main.js": "/sample-bankDashboard/static/js/main.c1852101.js",
-    "static/media/no-accounts.png": "/sample-bankDashboard/static/media/no-accounts.1bd144516e7ed3f29865.png",
-    "static/media/underconstruction.png": "/sample-bankDashboard/static/media/underconstruction.95ac0b062a55539c1983.png",
-    "static/media/jest.png": "/sample-bankDashboard/static/media/jest.95bffbbd80a3ba10dfa4.png",
-    "static/media/bank-logo.png": "/sample-bankDashboard/static/media/bank-logo.8420b466c984ca520037.png",
-    "static/media/react.png": "/sample-bankDashboard/static/media/react.e71f4c5b0c4306d65355.png",
-    "static/media/d3-js.png": "/sample-bankDashboard/static/media/d3-js.bacb7335a0a1e7b0387f.png",
-    "index.html": "/sample-bankDashboard/index.html",
-    "main.69951cb9.css.map": "/sample-bankDashboard/static/css/main.69951cb9.css.map",
-    "main.c1852101.js.map": "/sample-bankDashboard/static/js/main.c1852101.js.map"
+    "main.css": "/react-bankDashboard/static/css/main.69951cb9.css",
+    "main.js": "/react-bankDashboard/static/js/main.c0204067.js",
+    "static/media/no-accounts.png": "/react-bankDashboard/static/media/no-accounts.1bd144516e7ed3f29865.png",
+    "static/media/underconstruction.png": "/react-bankDashboard/static/media/underconstruction.95ac0b062a55539c1983.png",
+    "static/media/jest.png": "/react-bankDashboard/static/media/jest.95bffbbd80a3ba10dfa4.png",
+    "static/media/bank-logo.png": "/react-bankDashboard/static/media/bank-logo.8420b466c984ca520037.png",
+    "static/media/react.png": "/react-bankDashboard/static/media/react.e71f4c5b0c4306d65355.png",
+    "static/media/d3-js.png": "/react-bankDashboard/static/media/d3-js.bacb7335a0a1e7b0387f.png",
+    "index.html": "/react-bankDashboard/index.html",
+    "main.69951cb9.css.map": "/react-bankDashboard/static/css/main.69951cb9.css.map",
+    "main.c0204067.js.map": "/react-bankDashboard/static/js/main.c0204067.js.map"
   },
   "entrypoints": [
     "static/css/main.69951cb9.css",
-    "static/js/main.c1852101.js"
+    "static/js/main.c0204067.js"
   ]
 }
